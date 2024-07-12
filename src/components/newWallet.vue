@@ -41,6 +41,7 @@
     <select v-model="selectedDerivationPath">
       <option value="standard">m/44’/145’/0’ (standard)</option>
       <option value="bitcoindotcom">m/44’/0’/0’ (bitcoin.com wallet)</option>
+      <option value="bitcoindotcom">m/44'/245'/0'/0’ (zapit wallet)</option>      
     </select> <br>
     <input @click="importWallet()" class="button primary" type="button" style="margin-top:15px" value="Import">
     <br><br>
