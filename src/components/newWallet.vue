@@ -20,7 +20,7 @@
     const derivationPath = selectedDerivationPath.value == "standard"
        ? "m/44'/145'/0'/0/0"
        : selectedDerivationPath.value == "zapit"
-       ? "m/44'/145'/255'/0/0"
+       ? "m/44'/245'/0'/0/0"
        : "m/44'/0'/0'/0/0";
 
     if(selectedDerivationPath.value == "standard") Config.DefaultParentDerivationPath = "m/44'/145'/0'";
