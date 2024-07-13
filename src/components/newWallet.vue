@@ -17,10 +17,10 @@
 
   async function importWallet() {
     //const derivationPath = selectedDerivationPath.value == "standard"? "m/44'/145'/0'/0/0" : "m/44'/0'/0'/0/0";
-    const derivationPath = selectedDerivationPath.value == "standard"
-       ? "m/44'/145'/0'/0/0"
-       : selectedDerivationPath.value == "zapit"
+    const derivationPath = selectedDerivationPath.value == "zapit"
        ? "m/44'/245'/0'/0/0"
+       : selectedDerivationPath.value == "standard"
+       ? "m/44'/145'/0'/0/0"
        : "m/44'/0'/0'/0/0";
 
     if(selectedDerivationPath.value == "standard") Config.DefaultParentDerivationPath = "m/44'/145'/0'";
@@ -45,9 +45,9 @@
     <textarea v-model="seedphrase" style="resize: none;" rows="3" cols="50" placeholder="word1 word2 ..."></textarea>
     <span>Derivation path: </span>
     <select v-model="selectedDerivationPath">
+      <option value="zapit">m/44'/245'/0'/0’ (zapit wallet)</option>      
       <option value="standard">m/44’/145’/0’ (standard)</option>
       <option value="bitcoindotcom">m/44’/0’/0’ (bitcoin.com wallet)</option>
-      <option value="zapit">m/44'/245'/0'/0’ (zapit wallet)</option>      
     </select> <br>
     <input @click="importWallet()" class="button primary" type="button" style="margin-top:15px" value="Import">
     <br><br>
