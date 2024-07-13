@@ -17,11 +17,17 @@
 
   async function importWallet() {
     //const derivationPath = selectedDerivationPath.value == "standard"? "m/44'/145'/0'/0/0" : "m/44'/0'/0'/0/0";
-    const derivationPath = selectedDerivationPath.value == "zapit"
-       ? "m/44'/245'/0'/0/0"
-       : selectedDerivationPath.value == "standard"
-       ? "m/44'/145'/0'/0/0"
-       : "m/44'/0'/0'/0/0";
+    
+    let derivationPath;
+
+    if (selectedDerivationPath.value == "standard") {
+       derivationPath = "m/44'/145'/0'/0/0";
+    } else if (selectedDerivationPath.value == "zapit") {
+       derivationPath = "m/44'/245'/0'/0/0";
+    } else {
+       derivationPath = "m/44'/0'/0'/0/0";
+    }
+
 
     if(selectedDerivationPath.value == "standard") Config.DefaultParentDerivationPath = "m/44'/145'/0'";
     const walletId = `seed:mainnet:${seedphrase.value}:${derivationPath}`;
